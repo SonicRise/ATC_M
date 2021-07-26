@@ -26,9 +26,6 @@ public class AmdocsHelper {
     private static final ConnectionData connectionDataKztusg1 = connections.getConnectionData().get(1);
 
     public static void main(String[] args) {
-
-
-
         String test = "10415203514;\n" +
                 "10415203516;\n" +
                 "10415203518;\n" +
@@ -57,29 +54,20 @@ public class AmdocsHelper {
             OracleConnection connectionDkp1 = (OracleConnection) getConnection(connectionDataDkp1);
             OracleConnection connectionKztusg1 = (OracleConnection) getConnection(connectionDataKztusg1);
 
-            lines.stream().map((s) -> {
-                s = s.substring(0 , s.length() - 1);
+            lines.stream().map(s -> {
+                System.out.println("test");
+                s = s.substring(0, s.length() - 1);
                 String subscriberId = getSubscriberId(connectionDkp1, s);
                 String townId = getTownId(connectionKztusg1, subscriberId);
                 System.out.println("UPDATE DB.RPR9_USAGE_INTERFACE SET TOWN_ID = " + townId + " WHERE ID = " + s + ";");
                 return s;
-            });
+            }).collect(Collectors.toList());
         } catch (Exception e) {
             System.out.println("Exception in stream: " + e.getMessage());
         }
-
-
+        
         String line = "UPDATE DB.RPR9_USAGE_INTERFACE SET TOWN_ID = '07002' WHERE ID = 10412499346;";
         String errorIdTest = line.substring(line.indexOf("RE ID") + 8, line.length() - 1);
-
-
-        /*String errorId = "10415203737";
-        String subscriberId = getSubscriberId(errorId);
-        System.out.println("SubscriberId: " + subscriberId);
-        String townId = getTownId(subscriberId);
-        System.out.println("TownId: " + townId);
-        System.out.println("Result string: ");
-        System.out.println("UPDATE DB.RPR9_USAGE_INTERFACE SET TOWN_ID = " + townId + " WHERE ID = " + errorId + ";");*/
     }
 
     private static String getSubscriberId(OracleConnection connection, String errorId) {
