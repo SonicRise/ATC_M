@@ -5,10 +5,8 @@ import com.amdocshelper.connections.Connections;
 import oracle.jdbc.OracleConnection;
 import oracle.jdbc.pool.OracleDataSource;
 
-import java.sql.DatabaseMetaData;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import java.sql.Statement;
 import java.util.Properties;
 
 public class AmdocsHelper {
@@ -20,7 +18,7 @@ public class AmdocsHelper {
         System.out.println("SubscriberId: " + subscriberId);
     }
 
-    private static String getSubscriberId(String errorId){
+    private static String getSubscriberId(String errorId) {
         /*
          * 0 - dkp1
          */
@@ -40,20 +38,22 @@ public class AmdocsHelper {
 
             PreparedStatement preparedStatement = connection.prepareStatement(
                     "select e.error, i.* " +
-                    "from db.rpr9_error e, db.rpr9_usage_interface i " +
-                    "where e.rpr9_usage_interface_id = i.id " +
-                    "and e.rpr9_portion_id=i.rpr9_portion_id " +
-                    "and i.id = ?");
+                            "from db.rpr9_error e, db.rpr9_usage_interface i " +
+                            "where e.rpr9_usage_interface_id = i.id " +
+                            "and e.rpr9_portion_id=i.rpr9_portion_id " +
+                            "and i.id = ?");
 
             preparedStatement.setString(1, errorId);
             try {
                 ResultSet resultSet = preparedStatement.executeQuery();
-                return resultSet.getString("subscriber_id");
+                return resultSet != null ? resultSet.getString("subscriber_id") : null;
             } catch (Exception e) {
                 System.out.println("Exception in query: " + e.getMessage());
+                return null;
             }
         } catch (Exception e) {
             System.out.println("Exception in connection: " + e.getMessage());
+            return null;
         }
     }
 }
