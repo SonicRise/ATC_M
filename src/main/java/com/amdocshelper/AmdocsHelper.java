@@ -38,7 +38,8 @@ public class AmdocsHelper {
             } else {
                 System.out.println("null");
             }
-
+            System.out.println(connectionData);
+/*
             try {
                 Statement statement = connection.createStatement();
                 try {
@@ -63,7 +64,7 @@ public class AmdocsHelper {
                 }
             } catch (Exception e) {
                 System.out.println("Exception in statement: " + e.getMessage());
-            }
+            }*/
         } catch (Exception e) {
             System.out.println("Exception in connection: " + e.getMessage());
         }

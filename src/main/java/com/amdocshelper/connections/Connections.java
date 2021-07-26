@@ -21,8 +21,4 @@ public class Connections {
                 .password("ciuyrhvv")
                 .build());
     }
-
-    public void test () {
-
-    }
 }
