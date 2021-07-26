@@ -14,11 +14,15 @@ public class Connections {
     private List<ConnectionData> connectionData = new ArrayList<ConnectionData>();
 
     public Connections() {
-        connectionData.set(0, ConnectionData.builder()
+        connectionData.add(0, ConnectionData.builder()
                 .connectionString("jdbc:oracle:thin:@//10.240.13.66:1521/orcl")
                 .database("dkp1")
                 .username("reporter")
                 .password("ciuyrhvv")
                 .build());
+    }
+
+    public void test () {
+
     }
 }

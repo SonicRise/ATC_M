@@ -44,7 +44,7 @@ public class AmdocsHelper {
                 try {
                     ResultSet resultSet = statement.executeQuery(
                             "select e.error, i.* " +
-                                    "from db.rpr9_error e, db.rpr9_usage_interface  " +
+                                    "from db.rpr9_error e, db.rpr9_usage_interface i " +
                                     "where e.rpr9_usage_interface_id = i.id " +
                                     "and e.rpr9_portion_id=i.rpr9_portion_id " +
                                     "end i.id = 10415203737");

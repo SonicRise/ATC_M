@@ -1,0 +1,6 @@
+######################
+# Project Specific
+######################
+**/target/**
+**/target/generated-sources/**
+
