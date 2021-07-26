@@ -1,0 +1,6 @@
+#NOTE: This is an Aether internal implementation file, its format can be changed without prior notice.
+#Mon Jul 12 10:32:36 ALMT 2021
+@default-temp-t2-repository-http\://maven.dlr.tele2.at-consulting.ru\:8081/repository/t2dp-repository/.lastUpdated=1626064356464
+http\://maven.dlr.tele2.at-consulting.ru\:8081/repository/t2dp-repository/.error=Could not transfer artifact com.oracle.jdbc\:ojdbc8\:jar\:sources\:18.3.0.0 from/to temp-t2-repository (http\://maven.dlr.tele2.at-consulting.ru\:8081/repository/t2dp-repository/)\: maven.dlr.tele2.at-consulting.ru
+https\://repo.maven.apache.org/maven2/.lastUpdated=1626064356375
+https\://repo.maven.apache.org/maven2/.error=

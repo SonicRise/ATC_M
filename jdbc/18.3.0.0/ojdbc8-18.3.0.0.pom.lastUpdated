@@ -1,0 +1,6 @@
+#NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
+#Mon Jul 12 11:07:54 ALMT 2021
+@default-temp-t2-repository-http\://maven.dlr.tele2.at-consulting.ru\:8081/repository/t2dp-repository/.lastUpdated=1626066474008
+http\://maven.dlr.tele2.at-consulting.ru\:8081/repository/t2dp-repository/.error=Could not transfer artifact com.oracle.jdbc\:ojdbc8\:pom\:18.3.0.0 from/to temp-t2-repository (http\://maven.dlr.tele2.at-consulting.ru\:8081/repository/t2dp-repository/)\: Transfer failed for http\://maven.dlr.tele2.at-consulting.ru\:8081/repository/t2dp-repository/com/oracle/jdbc/ojdbc8/18.3.0.0/ojdbc8-18.3.0.0.pom
+https\://repo.maven.apache.org/maven2/.lastUpdated=1626063532844
+https\://repo.maven.apache.org/maven2/.error=
