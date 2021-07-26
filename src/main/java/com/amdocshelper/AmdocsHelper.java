@@ -46,7 +46,8 @@ public class AmdocsHelper {
             preparedStatement.setString(1, errorId);
             try {
                 ResultSet resultSet = preparedStatement.executeQuery();
-                return resultSet != null ? resultSet.getString("subscriber_id") : null;
+                resultSet.next();
+                return resultSet.getString("subscriber_id");
             } catch (Exception e) {
                 System.out.println("Exception in query: " + e.getMessage());
                 return null;
