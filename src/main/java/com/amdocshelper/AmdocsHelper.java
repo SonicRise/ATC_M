@@ -30,16 +30,6 @@ public class AmdocsHelper {
             ods.setConnectionProperties(info);
 
             OracleConnection connection = (OracleConnection) ods.getConnection();
-            DatabaseMetaData dbmd = connection.getMetaData();
-            if (dbmd != null) {
-                System.out.println("Driver Name: " + dbmd.getDriverName());
-                System.out.println("Driver Version: " + dbmd.getDriverVersion());
-                System.out.println("Database Username is: " + connection.getUserName());
-            } else {
-                System.out.println("null");
-            }
-            System.out.println(connectionData);
-/*
             try {
                 Statement statement = connection.createStatement();
                 try {
@@ -48,23 +38,17 @@ public class AmdocsHelper {
                                     "from db.rpr9_error e, db.rpr9_usage_interface i " +
                                     "where e.rpr9_usage_interface_id = i.id " +
                                     "and e.rpr9_portion_id=i.rpr9_portion_id " +
-                                    "end i.id = 10415203737");
+                                    "and i.id = 10415203737");
 
-                    if (resultSet != null) {
-                        System.out.println("Size: " + resultSet.getFetchSize());
-                    } else {
-                        System.out.println("empty");
-                    }
                     while (resultSet.next()) {
-                        System.out.println(resultSet);
-                        System.out.println();
+                        System.out.println("SubscriberID" + resultSet.getString("subscriber_id"));
                     }
                 } catch (Exception e) {
                     System.out.println("Exception in query: " + e.getMessage());
                 }
             } catch (Exception e) {
                 System.out.println("Exception in statement: " + e.getMessage());
-            }*/
+            }
         } catch (Exception e) {
             System.out.println("Exception in connection: " + e.getMessage());
         }
