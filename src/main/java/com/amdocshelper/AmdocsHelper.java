@@ -55,7 +55,6 @@ public class AmdocsHelper {
             OracleConnection connectionKztusg1 = (OracleConnection) getConnection(connectionDataKztusg1);
 
             lines.stream().map(s -> {
-                System.out.println("test");
                 s = s.substring(0, s.length() - 1);
                 String subscriberId = getSubscriberId(connectionDkp1, s);
                 String townId = getTownId(connectionKztusg1, subscriberId);
@@ -65,7 +64,7 @@ public class AmdocsHelper {
         } catch (Exception e) {
             System.out.println("Exception in stream: " + e.getMessage());
         }
-        
+
         String line = "UPDATE DB.RPR9_USAGE_INTERFACE SET TOWN_ID = '07002' WHERE ID = 10412499346;";
         String errorIdTest = line.substring(line.indexOf("RE ID") + 8, line.length() - 1);
     }
@@ -126,14 +125,14 @@ public class AmdocsHelper {
         int count = 0;
         try {
             ResultSet resultSet = preparedStatement.executeQuery();
-            while (resultSet.next()) {
+            /*while (resultSet.next()) {
                 count++;
             }
 
             if (count > 1) {
                 System.out.println("//////////////////////// " + subId);
-            }
-            //resultSet.next();
+            }*/
+            resultSet.next();
             return resultSet.getString(resultColumn);
         } catch (Exception e) {
             System.out.println("Exception in query: " + e.getMessage());
