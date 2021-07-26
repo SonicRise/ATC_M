@@ -20,5 +20,11 @@ public class Connections {
                 .username("reporter")
                 .password("ciuyrhvv")
                 .build());
+        connectionData.add(1, ConnectionData.builder()
+                .connectionString("jdbc:oracle:thin:@//10.72.237.102:1521/KZTUSG1")
+                .database("kztusg1")
+                .username("prd1usg1c")
+                .password("prd1usg1c")
+                .build());
     }
 }
