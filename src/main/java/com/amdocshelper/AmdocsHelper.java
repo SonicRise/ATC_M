@@ -51,9 +51,12 @@ public class AmdocsHelper {
 
                     if (resultSet != null) {
                         System.out.println("Size: " + resultSet.getFetchSize());
+                    } else {
+                        System.out.println("empty");
                     }
                     while (resultSet.next()) {
                         System.out.println(resultSet);
+                        System.out.println();
                     }
                 } catch (Exception e) {
                     System.out.println("Exception in query: " + e.getMessage());
