@@ -44,7 +44,7 @@ public class AmdocsHelper {
             }
         }).collect(Collectors.toList());
 
-        distinctLines.forEach(System.out::println);
+        //distinctLines.forEach(System.out::println);
 
         try {
             OracleConnection connectionDkp1 = (OracleConnection) getConnection(connectionDataDkp1);
