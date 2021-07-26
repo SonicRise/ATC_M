@@ -44,14 +44,13 @@ public class AmdocsHelper {
             }
         }).collect(Collectors.toList());
 
-        //distinctLines.forEach(System.out::println);
+        distinctLines.forEach(System.out::println);
 
         try {
             OracleConnection connectionDkp1 = (OracleConnection) getConnection(connectionDataDkp1);
             OracleConnection connectionKztusg1 = (OracleConnection) getConnection(connectionDataKztusg1);
 
             distinctLines.stream().map(s -> {
-                s = s.substring(0, s.length() - 1);
                 String subscriberId = getSubscriberId(connectionDkp1, s);
                 String townId = getTownId(connectionKztusg1, subscriberId);
                 System.out.println("UPDATE DB.RPR9_USAGE_INTERFACE SET TOWN_ID = " + townId + " WHERE ID = " + s + ";");
@@ -125,7 +124,7 @@ public class AmdocsHelper {
             }
 
             if (count > 1) {
-                System.out.println(count);
+                System.out.println("SubscriberId where Town_id > 1" + subId);
             }
             return result;
         } catch (Exception e) {
