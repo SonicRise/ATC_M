@@ -64,9 +64,9 @@ public class AmdocsHelper {
         } catch (Exception e) {
             System.out.println("Exception in stream: " + e.getMessage());
         }
-
+/*
         String line = "UPDATE DB.RPR9_USAGE_INTERFACE SET TOWN_ID = '07002' WHERE ID = 10412499346;";
-        String errorIdTest = line.substring(line.indexOf("RE ID") + 8, line.length() - 1);
+        String errorIdTest = line.substring(line.indexOf("RE ID") + 8, line.length() - 1);*/
     }
 
     private static String getSubscriberId(OracleConnection connection, String errorId) {
@@ -123,17 +123,18 @@ public class AmdocsHelper {
 
     private static String sqlExecutor(PreparedStatement preparedStatement, String resultColumn, String subId) {
         int count = 0;
+        String result = null;
         try {
             ResultSet resultSet = preparedStatement.executeQuery();
-            /*while (resultSet.next()) {
+            while(resultSet.next()) {
+                result = resultSet.getString(resultColumn);
                 count++;
             }
 
-            if (count > 1) {
-                System.out.println("//////////////////////// " + subId);
-            }*/
-            resultSet.next();
-            return resultSet.getString(resultColumn);
+            if(count > 1){
+                System.out.println(count);
+            }
+            return result;//resultSet.getString(resultColumn);
         } catch (Exception e) {
             System.out.println("Exception in query: " + e.getMessage());
             return null;
