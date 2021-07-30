@@ -53,7 +53,7 @@ public class AmdocsHelper {
             distinctLines.stream().map(s -> {
                 String subscriberId = getSubscriberId(connectionDkp1, s);
                 String townId = getTownId(connectionKztusg1, subscriberId);
-                System.out.println("UPDATE DB.RPR9_USAGE_INTERFACE SET TOWN_ID = " + townId + " WHERE ID = " + s + ";");
+                System.out.println("UPDATE DB.RPR9_USAGE_INTERFACE SET TOWN_ID = '" + townId + "' WHERE ID = " + s + ";");
                 return s;
             }).collect(Collectors.toList());
         } catch (Exception e) {
