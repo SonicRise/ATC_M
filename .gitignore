@@ -1,10 +1,4 @@
 ######################
-# Project Specific
-######################
-**/target/**
-**/target/generated-sources/**
-
-######################
 # Intellij
 ######################
 .idea/
@@ -15,6 +9,12 @@
 *.orig
 classes/
 out/
+
+######################
+# Project Specific
+######################
+**/target/**
+**/target/generated-sources/**
 
 ######################
 # Maven
@@ -29,3 +29,27 @@ out/
 *.war
 *.ear
 *.db
+
+######################
+# Directories
+######################
+/bin/
+
+######################
+# Logs
+######################
+*.log*
+
+######################
+# Others
+######################
+*.class
+*.*~
+*~
+.merge_file*
+
+######################
+# Maven Wrapper
+######################
+!.mvn/wrapper/maven-wrapper.jar
+
