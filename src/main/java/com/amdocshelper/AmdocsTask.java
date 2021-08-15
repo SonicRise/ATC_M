@@ -17,7 +17,7 @@ import java.util.Properties;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
-public class AmdocsHelper {
+public class AmdocsTask {
     private static final Connections connections = new Connections();
 
     /*
@@ -31,7 +31,7 @@ public class AmdocsHelper {
         List<String> lines = new ArrayList<>();
         List<String> distinctLines = new ArrayList<>();
         try {
-            Stream<String> fileStrings = Files.lines(Paths.get("src/main/resources/lines.txt"));
+            Stream<String> fileStrings = Files.lines(Paths.get("src/main/resources/AmdocsTask.txt"));
             lines = fileStrings.collect(Collectors.toList());
         } catch (Exception e) {
             System.out.println("Parsing exception: " + e.getMessage());
@@ -83,8 +83,7 @@ public class AmdocsHelper {
             PreparedStatement preparedStatement = connection.prepareStatement(
                     "select distinct rpr.town_id " +
                             "from rpr9_usage_interface rpr " +
-                            "where 1 = 1 " +
-                            "and rpr.subscriber_id in(?) " +
+                            "where rpr.subscriber_id in(?) " +
                             "and rpr.cycle_code in (07) " +
                             "and rpr.cycle_month in ('7')" +
                             "and rpr.record_type in ('V')" +
