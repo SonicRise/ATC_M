@@ -31,6 +31,8 @@ public class BillParser {
             String lineWithoutFirstNumbers = line.substring(line.indexOf(" ") + 1);
             //System.out.println(lineWithoutFirstNumbers);
 
+            //master change
+
             //Getting price
             String lineBeforeCurrency = lineWithoutFirstNumbers.substring(0, lineWithoutFirstNumbers.indexOf("₸"));
             //System.out.println(lineBeforeCurrency);
