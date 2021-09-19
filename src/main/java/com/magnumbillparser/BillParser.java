@@ -47,7 +47,7 @@ public class BillParser {
                 } else if (last.contains("Г")) {
                     last = last.substring(last.indexOf("Г"));
                 }
-//m1
+
                 char[] array = last.toCharArray();
                 for (char a : array) {
                     if (Character.isDigit(a)) {
