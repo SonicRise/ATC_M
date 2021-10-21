@@ -44,7 +44,7 @@ public class AmdocsTask {
             }
         }).collect(Collectors.toList());
 
-        //master change
+        //master change2
         //distinctLines.forEach(System.out::println);
 
         try {
