@@ -21,6 +21,7 @@ public class BillParser {
         } catch (Exception e) {
             System.out.println("Parsing exception: " + e.getMessage());
         }
+        //lkm2
 
         List<String> withNumbers = allText.stream()
                 .filter(line -> !Strings.isNullOrEmpty(line))
