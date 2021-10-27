@@ -26,7 +26,7 @@ public class BillParser {
                 .filter(line -> (Character.isDigit(line.charAt(0)) && (line.charAt(1) == '.' || line.charAt(2) == '.'))).collect(Collectors.toList());
 
         //withNumbers.forEach(System.out::println);
-
+//master change
         for (String line: withNumbers) {
             String lineWithoutFirstNumbers = line.substring(line.indexOf(" ") + 1);
             //System.out.println(lineWithoutFirstNumbers);
