@@ -13,6 +13,7 @@ import com.google.common.base.Strings;
 
 public class BillParser {
     public static void main(String[] args) {
+        //rc1
         List<String> allText = new ArrayList<>();
         try {
             Stream<String> fileStrings = Files.lines(Paths.get("src/main/resources/Bill.txt"));
