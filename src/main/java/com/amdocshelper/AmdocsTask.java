@@ -1,3 +1,4 @@
+/*
 package com.amdocshelper;
 
 import com.amdocshelper.connections.ConnectionData;
@@ -20,10 +21,12 @@ import java.util.stream.Stream;
 public class AmdocsTask {
     private static final Connections connections = new Connections();
 
-    /*
+    */
+/*
      * 0 - dkp1
      * 1 - kztusg1
-     */
+     *//*
+
     private static final ConnectionData connectionDataDkp1 = connections.getConnectionData().get(0);
     private static final ConnectionData connectionDataKztusg1 = connections.getConnectionData().get(1);
 
@@ -132,3 +135,4 @@ public class AmdocsTask {
         }
     }
 }
+*/

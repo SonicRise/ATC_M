@@ -5,7 +5,6 @@ import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import java.util.Map;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -13,7 +12,6 @@ import com.google.common.base.Strings;
 
 public class BillParser {
     public static void main(String[] args) {
-        //rc1
         List<String> allText = new ArrayList<>();
         try {
             Stream<String> fileStrings = Files.lines(Paths.get("src/main/resources/Bill.txt"));
@@ -21,14 +19,12 @@ public class BillParser {
         } catch (Exception e) {
             System.out.println("Parsing exception: " + e.getMessage());
         }
-        //lkm2
 
         List<String> withNumbers = allText.stream()
                 .filter(line -> !Strings.isNullOrEmpty(line))
                 .filter(line -> (Character.isDigit(line.charAt(0)) && (line.charAt(1) == '.' || line.charAt(2) == '.'))).collect(Collectors.toList());
 
         //withNumbers.forEach(System.out::println);
-//master change
         for (String line: withNumbers) {
             String lineWithoutFirstNumbers = line.substring(line.indexOf(" ") + 1);
             //System.out.println(lineWithoutFirstNumbers);
