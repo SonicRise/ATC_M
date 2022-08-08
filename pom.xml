@@ -35,12 +35,12 @@
             <version>2.3.1</version>
         </dependency>
 
-        <!-- https://mvnrepository.com/artifact/com.oracle.jdbc/ojdbc8 -->
+        <!-- https://mvnrepository.com/artifact/com.oracle.jdbc/ojdbc8
         <dependency>
             <groupId>com.oracle.jdbc</groupId>
             <artifactId>ojdbc8</artifactId>
             <version>18.3.0.0</version>
-        </dependency>
+        </dependency>-->
 
         <dependency>
             <groupId>org.projectlombok</groupId>
@@ -55,5 +55,18 @@
             <version>28.0-jre</version>
         </dependency>
 
+        <!-- https://mvnrepository.com/artifact/commons-io/commons-io -->
+        <dependency>
+            <groupId>commons-io</groupId>
+            <artifactId>commons-io</artifactId>
+            <version>2.11.0</version>
+        </dependency>
+        <dependency>
+            <groupId>com.sample</groupId>
+            <artifactId>sample</artifactId>
+            <version>1.0</version>
+            <scope>system</scope>
+            <systemPath>${project.basedir}/lib/ta-lib-0.4.0.jar</systemPath>
+        </dependency>
     </dependencies>
 </project>
