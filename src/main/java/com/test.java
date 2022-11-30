@@ -48,7 +48,6 @@ public class test {
     }
 
     public static double[] rsi(double[] prices, int period) {
-        //mfix
         double[] output = new double[prices.length];
         double[] tempOutPut = new double[prices.length];
         MInteger begin = new MInteger();
