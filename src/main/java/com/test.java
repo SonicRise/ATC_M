@@ -10,6 +10,7 @@ import java.math.MathContext;
 public class test {
     public static void main(String[] args) {
         //master
+        //test1
         /*double[] array = {207.650, 205.160, 210.870, 209.350, 207.250, 209.960, 207.650, 205.160, 188.170, 186.020};
 
         BigDecimal a = new BigDecimal(1.12, MathContext.DECIMAL32);
